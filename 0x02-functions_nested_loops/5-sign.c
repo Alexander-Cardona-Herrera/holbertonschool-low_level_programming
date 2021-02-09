@@ -2,6 +2,7 @@
 
 /**
  *print_sign - prints signs
+ *@n: is an integer to evaluate
  *Return: Always 0 (Success)
  */
 

@@ -2,6 +2,7 @@
 
 /**
  *_islower - returns 1 if c is lowercase
+ *@c: is a lowercase letter
  *Return: Always 0 (Success)
  */
 
