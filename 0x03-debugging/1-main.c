@@ -13,7 +13,7 @@ int main(void)
 
 		i = 0;
 
-		while (i < 10)
+		while (i < 10) /*i is always gonna be lower than 10*/
 		{
 				putchar(i);
 		}
