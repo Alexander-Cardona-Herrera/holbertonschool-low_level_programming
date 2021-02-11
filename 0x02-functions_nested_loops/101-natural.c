@@ -13,5 +13,5 @@ int main(void)
 			m = m + n;
 
 	printf("%d\n", m);
-
+	return (0);
 }
