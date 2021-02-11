@@ -8,9 +8,7 @@
 
 void print_times_table(int n)
 {
-	int x;
-	int y;
-	int z;
+	int x, y, z;
 
 	if (n < 15 && n > 0)
 	{
@@ -19,20 +17,23 @@ void print_times_table(int n)
 			for (y = 0; y <= n; y++)
 			{
 				z = (x * y);
-
 				if (y != 0)
 				{
 					_putchar(',');
 					_putchar(' ');
 				}
-				if (z >= 10 && z <= 99)
-				{
-					_putchar((z / 10) + '0');
-					_putchar((z % 10) + '0');
-				}
-				else if ((z < 10) && (y != 0))
+				if (y == 0)
+					_putchar('0');
+				else if (z < 10)
 				{
 					_putchar(' ');
+					_putchar(' ');
+					_putchar((z % 10) + '0');
+				}
+				else if (z >= 10 && z <= 99)
+				{
+					_putchar(' ');
+					_putchar((z / 10) + '0');
 					_putchar((z % 10) + '0');
 				}
 				else if (z > 99)
@@ -48,6 +49,3 @@ void print_times_table(int n)
 		}
 	}
 }
-
-
-
