@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * _memset - prints buffer in hexa
+ * _memset - fills memory with a constant byte
  * @s: a pointer
  * @b: an array
  * @n: an usigned integer
