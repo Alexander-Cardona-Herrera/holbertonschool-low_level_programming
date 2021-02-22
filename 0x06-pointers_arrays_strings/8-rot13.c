@@ -10,8 +10,8 @@ char *rot13(char *s)
 {
 	int a;
 	int b;
-	char *g = "abcdefghijklmABCDEFGHIJKLM";
-	char *v = "nopqrstuvwxyzNOPQRSTUVWXYZ";
+	char *g = "abcdefghijklmABCDEFGHIJKLMnopqrstuvwxyzNOPQRSTUVWXYZ";
+	char *v = "nopqrstuvwxyzNOPQRSTUVWXYZabcdefghijklmABCDEFGHIJKLM";
 
 	for (a = 0 ; s[a] != '\0'; a++)
 	{
@@ -20,10 +20,6 @@ char *rot13(char *s)
 			if (s[a] == g[b])
 			{
 				s[a] = v[b];
-			}
-			else if (s[a] == v[b])
-			{
-				s[a] = g[b];
 			}
 		}
 	}
