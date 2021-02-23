@@ -20,7 +20,7 @@ char *_strstr(char *haystack, char *needle)
 				k++;
 			}
 		}
-		if (i == k)
+		if (c == k)
 			return (needle);
 	}
 	return (0);
