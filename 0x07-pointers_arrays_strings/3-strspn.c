@@ -1,30 +1,25 @@
 #include "holberton.h"
 
 /**
- * _strchr - locates a character in a string
+ * _strspn - count char of a string in a substring
  * @s: array type char
  * @accept: array type char
  * Return: 0
  */
 unsigned int _strspn(char *s, char *accept)
 {
-	int c = 0;
-	int i = 0;
+	int c, i, k;
 
-	for (; s[c] != '\0' && s[c] != ' ';)
+	k = 0;
+	for (c = 0; s[c] != '\0' && s[c] != 32; c++)
 	{
-		c++;
+		for (i = 0; accept[i] != '\0'; i++)
+		{
+			if (s[c] == accept[i])
+			{
+				k++;
+			}
+		}
 	}
-	for (; accept[i] != '\0' && accept[i] != ' ';)
-	{
-		i++;
-	}
-	if (i > c)
-	{
-		return (i - 1);
-	}
-	else
-	{
-		return (c - 1);
-	}
+	return (k);
 }
