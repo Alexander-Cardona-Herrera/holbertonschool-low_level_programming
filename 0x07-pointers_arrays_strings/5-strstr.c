@@ -8,20 +8,12 @@
  */
 char *_strstr(char *haystack, char *needle)
 {
-	int c, i, k;
+	const char *a = haystack, *b = needle;
 
-	k = 0;
-	for (c = 0; haystack[c] != '\0'; c++)
-	{
-		for (i = 0; needle[i] != '\0'; i++)
+	for (;;)
 		{
-			if (haystack[c] == needle[i])
-			{
-				k++;
-			}
+		if ( !*b ) return (char *) haystack;
+		if ( !*a ) return (0);
+		if ( *a++ != *b++) { a = ++haystack; b = needle; }
 		}
-		if (k == i)
-			return (needle);
-	}
-	return (0);
 }
