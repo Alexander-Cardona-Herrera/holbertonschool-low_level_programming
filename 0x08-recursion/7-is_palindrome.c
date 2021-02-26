@@ -26,10 +26,12 @@ int is_palindrome(char *s)
 	if (s[c] != s[i])
 		return (0);
 
-	if (s[c] == s[i])
+	else if (s[c] == s[i] && i >= c)
+		return (palindrome_compare(s, i - 1, c + 1));
+	
+	else
 		return (1);
 
-	return (palindrome_compare(s, i - 1, c + 1));
 }
 /**
  * _strlen_recursion - returns the lenght of a string
