@@ -1,5 +1,4 @@
 #include "holberton.h"
-
 /**
  * is_palindrome - evaluate if a string is palindrome
  * @s: a string
@@ -18,7 +17,8 @@ int is_palindrome(char *s)
 /**
  * palindrome_compare - use a counter
  * @s: a string
- * @i: a string
+ * @i: a integer
+ * @c: a integer
  * Return: int
  */
 	int palindrome_compare(char *s, int i, int c)
@@ -28,10 +28,9 @@ int is_palindrome(char *s)
 
 	else if (s[c] == s[i] && i >= c)
 		return (palindrome_compare(s, i - 1, c + 1));
-	
+
 	else
 		return (1);
-
 }
 /**
  * _strlen_recursion - returns the lenght of a string
