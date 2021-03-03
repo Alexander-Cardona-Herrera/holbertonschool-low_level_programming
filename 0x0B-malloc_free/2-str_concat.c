@@ -30,7 +30,7 @@ char *str_concat(char *s1, char *s2)
 	}
 	k++;
 
-	aux = malloc((i + k + 1) * sizeof(char));
+	aux = malloc((i + k - 1) * sizeof(char));
 
 	if (!aux)
 		return (NULL);
