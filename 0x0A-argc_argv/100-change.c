@@ -25,6 +25,7 @@ int main(int argc, char *argv[])
 	if (value < 0)
 	{
 		printf("0\n");
+		return (1);
 	}
 
 	sum = change(value);
