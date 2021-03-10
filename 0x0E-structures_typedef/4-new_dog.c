@@ -24,7 +24,9 @@ dog_t *new_dog(char *name, float age, char *owner)
 	if (pongo == NULL)
 		return (NULL);
 
-	pongo->name = malloc(a * sizeof(pongo->name));
+	pongo->name = malloc(a++ * sizeof(pongo->name));
+	if (pongo == NULL)
+		return (NULL);
 
 	for (c = 0; c < a;  c++)
 	{
@@ -34,7 +36,9 @@ dog_t *new_dog(char *name, float age, char *owner)
 	pongo->age = age;
 
 
-	pongo->owner = malloc(b * sizeof(pongo->owner));
+	pongo->owner = malloc(b++ * sizeof(pongo->owner));
+	if (pongo == NULL)
+		return (NULL);
 
 	for (c = 0; c < b;  c++)
 	{
