@@ -15,6 +15,7 @@ int sum_them_all(const unsigned int n, ...)
 	if (n != 0)
 	{
 		va_list aux;
+
 		va_start(aux, n);
 
 		for (i = 0; i < n; i++)
