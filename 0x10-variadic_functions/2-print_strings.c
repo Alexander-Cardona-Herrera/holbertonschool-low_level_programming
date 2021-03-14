@@ -16,32 +16,32 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	va_list aux;
 
 	va_start(aux, n);
-
 	if (separator == NULL)
 	{
 		for (i = 0; i < n; i++)
 		{
-			if (va_arg(aux, char*) == NULL)
+			s = va_arg(aux, char*);
+
+			if (s == NULL)
 				printf("(nil)");
 
 			else
-				printf("%s", va_arg(aux, char*));
+				printf("%s", s);
 		}
 	}
-
 	else
 	{
 		for (i = 0; i < n; i++)
 		{
 			s = va_arg(aux, char*);
 
-			if (s == NULL && i < n - 1 )
+			if (s == NULL && i < n - 1)
 				printf("(nil)%s", separator);
 
 			else if (i < n - 1)
 				printf("%s%s", s, separator);
 
-			else if (s == NULL && i == n -1)
+			else if (s == NULL && i == n - 1)
 				printf("(nil)");
 
 			else
@@ -49,6 +49,5 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		}
 	}
 	va_end(aux);
-
 	printf("\n");
 }
