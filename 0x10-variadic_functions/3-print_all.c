@@ -26,10 +26,10 @@ void print_all(const char * const format, ...)
 	va_start(aux, format);
 
 	i = 0;
-	while (format[i] != '\0')
+	while (format[i] != '\0' && format != NULL)
 	{
 		j = 0;
-		while( imp[j].s != NULL)
+		while (imp[j].s != NULL)
 		{
 			if (format[i] == imp[j].s[0])
 			{
