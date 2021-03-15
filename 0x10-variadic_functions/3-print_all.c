@@ -24,9 +24,12 @@ void print_all(const char * const format, ...)
 	va_list aux;
 
 	va_start(aux, format);
-	for (i = 0; format[i] != '\0'; i++)
+
+	i = 0;
+	while (format[i] != '\0')
 	{
-		for (j = 0; imp[j].s != NULL; j++)
+		j = 0;
+		while( imp[j].s != NULL)
 		{
 			if (format[i] == imp[j].s[0])
 			{
@@ -34,7 +37,9 @@ void print_all(const char * const format, ...)
 				imp[j].f(aux);
 				p = q;
 			}
+			j++;
 		}
+		i++;
 	}
 	va_end(aux);
 	printf("\n");
