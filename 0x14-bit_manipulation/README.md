@@ -1,6 +1,6 @@
 # 0x14. C - Bit manipulation
 
-## Truth Table
+## Truth Table for this Project
 ![](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-low_level_programming/232/bitwise.PNG)
 ## Learning Objectives
 
