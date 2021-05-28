@@ -9,35 +9,35 @@
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-    unsigned long int index = 0;
-    hash_node_t *the_girl = NULL;
-    hash_node_t *head = NULL;
+	unsigned long int index = 0;
+	hash_node_t *the_girl = NULL;
+	hash_node_t *head = NULL;
 
-    if (!ht || !key)
-        return (0);
+	if (!ht || !key)
+		return (0);
 
-    index = hash_djb2((const unsigned char *)key) % sizeof(ht);
+	index = hash_djb2((const unsigned char *)key) % sizeof(ht);
 
-    the_girl = malloc(sizeof(hash_node_t));
-    if (the_girl == NULL)
-        return (0);
+	the_girl = malloc(sizeof(hash_node_t));
+	if (the_girl == NULL)
+		return (0);
 
-    the_girl->key = strdup(key);
-    the_girl->value = strdup(value);
+	the_girl->key = strdup(key);
+	the_girl->value = strdup(value);
 
-    head = ht->array[index];
-    while(head)
-    {
-        if (strcmp(head->key, key) == 0)
-        {
-            head->value = the_girl->value;
-            return (1);
-        }
-        head = head->next;
-    }
+	head = ht->array[index];
+	while (head)
+	{
+		if (strcmp(head->key, key) == 0)
+		{
+			head->value = the_girl->value;
+			return (1);
+		}
+		head = head->next;
+	}
 
-    the_girl->next = ht->array[index];
-    ht->array[index] = the_girl;
+	the_girl->next = ht->array[index];
+	ht->array[index] = the_girl;
 
-    return (1);
+	return (1);
 }
