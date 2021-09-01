@@ -1,42 +1,38 @@
 #include "search_algos.h"
 
 /**
- * binary_search - compare values in a binary manner.
- * @array: array
- * @size: size of array
- * @value: value to compare
- * Return: count or -1 on error.
+ * binary_search - searches for a value in a sorted array of integers using
+ * the Binary search algorithm
+ * @array: a pointer to the first element of the array to search in
+ * @size: the number of elements in array
+ * @value: the value to search for
+ * Return: index where value located, otherwise, return -1
  */
 
 int binary_search(int *array, size_t size, int value)
 {
-	int mid;
-	int count;
-	int low = 0;
-	int high = size - 1;
+	int l = 0, h = size - 1, mid = 0, i;
 
-	while (low <= high)
+	if (array == NULL)
+		return (-1);
+
+	while (l <= h)
 	{
 		printf("Searching in array: ");
-
-		count = low;
-		while (count <= high)
+		for (i = l; i <= h; i++)
 		{
-			if (count < high)
-				printf("%d, ", count);
-			else
-				printf("%d", count);
-			count++;
+			printf("%d", array[i]);
+			if (i < h)
+				printf(", ");
 		}
 		printf("\n");
-
-		mid = (high + low) / 2;
+		mid = (h + l) / 2;
 		if (array[mid] == value)
 			return (mid);
-		if (array[mid] < value)
-			low = mid + 1;
+		else if (array[mid] < value)
+			l = mid + 1;
 		else
-			high = mid - 1;
+			h = mid - 1;
 	}
 	return (-1);
 }
